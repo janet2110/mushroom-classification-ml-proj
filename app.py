@@ -221,27 +221,24 @@ with tab1:
                             st.metric("MCC Score", f"{metrics['MCC']:.4f}")
                         
                         # Confusion Matrix
-                        st.markdown('<p class="sub-header">🎯 Confusion Matrix</p>', unsafe_allow_html=True)
-                        
-                        col1, col2 = st.columns([1, 1])
-                        
-                        with col1:
-                            fig, ax = plt.subplots(figsize=(8, 6))
-                            sns.heatmap(cm, annot=True, fmt='d', cmap='Greens', 
-                                       xticklabels=['Edible', 'Poisonous'],
-                                       yticklabels=['Edible', 'Poisonous'])
+                        st.markdown('<div class="metric-card"><h3>🎯 Confusion Matrix</h3></div>', unsafe_allow_html=True)
+                        col1, col2, col3 = st.columns([1, 2, 1])
+                        with col2:
+                            fig, ax = plt.subplots(figsize=(6, 5))
+                            sns.heatmap(cm, annot=True, fmt='d', cmap='Greens',
+                                        xticklabels=['Edible', 'Poisonous'],
+                                        yticklabels=['Edible', 'Poisonous'])
                             plt.title(f'Confusion Matrix - {selected_model_name}')
                             plt.ylabel('Actual')
                             plt.xlabel('Predicted')
                             st.pyplot(fig)
-                        
-                        with col2:
-                            st.markdown("#### Classification Report")
-                            report = classification_report(y_test, y_pred, 
-                                                          target_names=['Edible', 'Poisonous'],
-                                                          output_dict=True)
-                            report_df = pd.DataFrame(report).transpose()
-                            st.dataframe(report_df.style.highlight_max(axis=0))
+
+                        st.markdown('<div class="metric-card"><h3>📋 Classification Report</h3></div>', unsafe_allow_html=True)
+                        report = classification_report(y_test, y_pred,
+                                                        target_names=['Edible', 'Poisonous'],
+                                                        output_dict=True)
+                        report_df = pd.DataFrame(report).transpose()
+                        st.dataframe(report_df.style.highlight_max(axis=0))
                         
                         # Prediction distribution
                         st.markdown('<p class="sub-header">📊 Prediction Distribution</p>', unsafe_allow_html=True)
@@ -320,7 +317,7 @@ with tab2:
         metrics = ['Accuracy', 'AUC', 'Precision', 'Recall', 'F1', 'MCC']
         
         # Create subplots
-        fig, axes = plt.subplots(2, 3, figsize=(18, 10))
+        fig, axes = plt.subplots(3, 2, figsize=(18, 15))
         fig.suptitle('Model Performance Comparison', fontsize=16, fontweight='bold')
         
         colors = ['#2e7d32', '#d32f2f', '#1976d2', '#f57c00', '#7b1fa2', '#00796b']
@@ -429,12 +426,6 @@ with tab3:
     3. Click "Run Prediction" to see results
     4. View evaluation metrics, confusion matrix, and classification report
     5. Download predictions if needed
-    
-    ---
-    
-    ⚠️ **Safety Warning**: This is an educational project. Never rely solely on automated 
-    systems for determining mushroom edibility in real-world scenarios. Always consult 
-    with mycology experts before consuming wild mushrooms.
     
     ---
     
