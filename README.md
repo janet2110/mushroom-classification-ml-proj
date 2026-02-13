@@ -1,22 +1,12 @@
 # 🍄 Mushroom Classification - Machine Learning Assignment 2
 
-**Student Details:**
-- **BITS ID:** 2025AA05835
-- **Name:** JANET DEVARAJ
-- **Email:** 2025aa05835@wilp.bits-pilani.ac.in
+## 👨‍🎓 Student Details
+- **BITS ID:** 2025AA05835  
+- **Name:** JANET DEVARAJ  
+- **Email:** 2025aa05835@wilp.bits-pilani.ac.in  
 
 ## 🧩 Problem Statement
-
 > **Goal:** Build a binary classification system to predict whether a mushroom is **edible** or **poisonous** based on its physical characteristics.
-
-### Why It Matters
-- Consuming poisonous mushrooms can cause **severe health issues** or even **death**.
-- A reliable classifier can help in **early identification** and **risk prevention**.
-
-### Approach
-This project:
-- Implements **six different machine learning algorithms**  
-- Compares their performance to determine the **most effective model** for mushroom classification
 
 ## Dataset Description
 
@@ -63,7 +53,7 @@ This project:
 | 22 | habitat                     | g=grasses, l=leaves, m=meadows, p=paths, u=urban, w=waste, d=woods                    |
 
 
-**Data Preprocessing:**
+## 🧩 **Data Preprocessing:**
 - All categorical features are label-encoded to numerical values
 - Missing values (denoted by '?') are removed
 - The dataset is split into 80% training and 20% testing sets
@@ -71,7 +61,7 @@ This project:
 
 ## Models Used
 
-## 📊 Comparison Table — Evaluation Metrics (80/20 Split)
+## 📊 Comparison Table — Evaluation Metrics
 
 | Model                  | Accuracy | AUC   | Precision | Recall | F1 Score | MCC   |
 |------------------------|----------|-------|-----------|--------|----------|-------|
@@ -86,7 +76,7 @@ This project:
 > Actual values may vary slightly depending on random state and data partitioning.
 
 
-### 📌 Model Performance Observations (80/20 Split)
+### 📌 Model Performance Observations
 
 | ML Model Name          | Observation about Model Performance |
 |------------------------|-------------------------------------|
@@ -96,6 +86,8 @@ This project:
 | Naive Bayes (Gaussian) | Achieved only **71.3% accuracy**, the lowest among all models. The conditional independence assumption is violated here, leading to poor performance. Mushroom features are highly correlated, which Naive Bayes cannot capture. Still, it is extremely fast and memory-efficient, making it suitable for lightweight real-time tasks despite lower accuracy. |
 | Random Forest          | Achieved **perfect 100% accuracy** through ensemble learning. Combines multiple decision trees to reduce overfitting while maintaining high accuracy. Provides feature importance rankings and captures complex non-linear interactions effectively. More reliable than a single decision tree. |
 | XGBoost                | Achieved **perfect 100% accuracy** using gradient boosting. Sequentially builds trees to correct previous errors, with built-in regularization to prevent overfitting. Highly efficient, robust, and considered state-of-the-art for tabular classification tasks. |
+
+
 
 ### 🔑 Key Insights
 
@@ -111,25 +103,25 @@ This project:
 
 ## 📂 Project Structure
 
-mushroom-classification-ml-proj/
-│
-├── app.py                          # Streamlit web application
-├── requirements.txt                # Python dependencies
-├── README.md                       # Project documentation
-│
-└── model/
-├── train_models.py             # Model training script
-├── train_models.ipynb          # Jupyter notebook for training
-├── decision_tree_model.pkl     # Saved Decision Tree model
-├── knn_model.pkl               # Saved KNN model
-├── logistic_regression_model.pkl # Saved Logistic Regression model
-├── naive_bayes_model.pkl       # Saved Naive Bayes model
-├── random_forest_model.pkl     # Saved Random Forest model
-├── xgboost_model.pkl           # Saved XGBoost model
-├── label_encoders.pkl          # Saved label encoders
-├── test_data.csv               # Test dataset features
-├── model_comparison.png        # Visualization of model comparison
-└── model_comparison_results.csv # Tabular results of model comparison
+    mushroom-classification-ml-proj/
+    │
+    ├── app.py                           # Streamlit web application
+    ├── requirements.txt                 # Python dependencies
+    ├── README.md                        # Project documentation
+    │
+    └── model/
+        ├── train_models.py              # Model training script
+        ├── train_models.ipynb           # Jupyter notebook for training
+        ├── decision_tree_model.pkl      # Saved Decision Tree model
+        ├── knn_model.pkl                # Saved KNN model
+        ├── logistic_regression_model.pkl # Saved Logistic Regression model
+        ├── naive_bayes_model.pkl        # Saved Naive Bayes model
+        ├── random_forest_model.pkl      # Saved Random Forest model
+        ├── xgboost_model.pkl            # Saved XGBoost model
+        ├── label_encoders.pkl           # Saved label encoders
+        ├── test_data.csv                # Test dataset features
+        ├── model_comparison.png         # Visualization of model comparison
+        └── model_comparison_results.csv # Tabular results of model comparison
 
 ## Installation and Setup
 
