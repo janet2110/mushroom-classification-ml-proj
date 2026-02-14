@@ -372,6 +372,8 @@ with tab3:
     
     ### 📊 Dataset Details
     - **Source**: UCI Machine Learning Repository
+    - **Dataset Link:** https://archive.ics.uci.edu/ml/datasets/mushroom
+
     - **Features**: 22 categorical features describing mushroom characteristics
     - **Classes**: Binary classification (Edible vs Poisonous)
     - **Total Samples**: 8,124 instances
@@ -425,7 +427,6 @@ with tab3:
     2. Select a model from the dropdown
     3. Click "Run Prediction" to see results
     4. View evaluation metrics, confusion matrix, and classification report
-    5. Download predictions if needed
     
     ---
     
